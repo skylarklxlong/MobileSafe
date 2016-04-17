@@ -15,7 +15,7 @@ public class OutCallReceiver extends BroadcastReceiver {
 		String phone = getResultData();
 		//查询数据库
 		String address = NumberAddressQueryUtils.queryNumber(phone);
-		Toast.makeText(context, address, 1).show();
+//		Toast.makeText(context, address, 1).show();
 	}
 
 }
