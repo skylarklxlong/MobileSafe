@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- versionCode是int类型,versionName是string类型 -->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.skylark.mobilesoft"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 读取开机启动权限 -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".SplashActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.skylark.mobilesoft.HomeActivity" />
+        <activity android:name="com.skylark.mobilesoft.SettingActivity" />
+        <activity android:name="com.skylark.mobilesoft.LostFindActivity" />
+        <activity android:name="com.skylark.mobilesoft.Setup1Activity" />
+        <activity android:name="com.skylark.mobilesoft.Setup2Activity" />
+        <activity android:name="com.skylark.mobilesoft.Setup3Activity" />
+        <activity android:name="com.skylark.mobilesoft.Setup4Activity" />
+        <activity android:name="com.skylark.mobilesoft.Setup5Activity" />
+        <activity android:name="com.skylark.mobilesoft.SelectContactActivity" />
+        <activity android:name="com.skylark.mobilesoft.AtoolsActivity"/>
+        <activity android:name="com.skylark.mobilesoft.NumberAddressQueryActivity"/>
+        
+        <service android:name="com.skylark.mobilesoft.service.GPSService"/>
+        <service android:name="com.skylark.mobilesoft.service.AddressService"/>
+
+        <receiver android:name="com.skylark.mobilesoft.recevier.BootCompleteReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.skylark.mobilesoft.recevier.SMSReceiver" >
+            <intent-filter android:priority="1000" >
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.skylark.mobilesoft.recevier.OutCallReceiver">
+            <intent-filter >
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL"/>
+            </intent-filter>
+        </receiver>
+        
+         <!-- 这里的注册是根据api文档来的 -->
+        <receiver
+            android:name="com.skylark.mobilesoft.recevier.MyAdmin"
+            android:description="@string/sample_device_admin_description"
+            android:label="@string/sample_device_admin"
+            android:permission="android.permission.BIND_DEVICE_ADMIN" >
+            <meta-data
+                android:name="android.app.device_admin"
+                android:resource="@xml/device_admin_sample" />
+
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+            </intent-filter>
+        </receiver>
+        
+    </application>
+
+</manifest>

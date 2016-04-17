@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:skylark="http://schemas.android.com/apk/res/com.skylark.mobilesoft"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="fill_parent"
+        android:layout_height="55dip"
+        android:background="#8866ff00"
+        android:gravity="center"
+        android:text="设置中心"
+        android:textColor="#000000"
+        android:textSize="22sp" />
+
+    <com.skylark.mobilesoft.ui.FocusedTextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="marquee"
+        android:singleLine="true"
+        android:text="最新的手机卫士快来下载........下载送大礼包啦.........走过路过不要错过啊........"
+        android:textSize="18sp" />
+    
+    <com.skylark.mobilesoft.ui.SettingItemView 
+        skylark:title="设置自动更新"
+        skylark:desc_on="设置自动更新已开启"
+        skylark:desc_off="设置自动更新已关闭"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/siv_update"
+        >
+        
+    </com.skylark.mobilesoft.ui.SettingItemView>
+    
+    <com.skylark.mobilesoft.ui.SettingItemView 
+        skylark:title="设置显示号码归属地"
+        skylark:desc_on="设置显示号码归属地已开启"
+        skylark:desc_off="设置显示号码归属地已关闭"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/siv_show_address"
+        >
+        
+    </com.skylark.mobilesoft.ui.SettingItemView>
+
+    
+</LinearLayout>
