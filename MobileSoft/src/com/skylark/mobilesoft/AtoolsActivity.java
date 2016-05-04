@@ -22,4 +22,10 @@ public class AtoolsActivity extends Activity {
 		Intent intent = new Intent(this,NumberAddressQueryActivity.class);
 		startActivity(intent);
 	}
+	public void weatherSearch(View view) {
+
+		Intent intent = new Intent(this,WeatherSearchActivity.class);
+		startActivity(intent);
+		
+	}
 }
