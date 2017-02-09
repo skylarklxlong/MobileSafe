@@ -4,6 +4,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
     
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="55dip">
     <TextView 
         android:background="#8866ff00"
         android:id="@+id/tv1"
@@ -13,6 +16,15 @@
         android:text="黑名单拦截"
         android:textSize="22sp"
         android:textColor="#000000"/>
+    <Button 
+        android:onClick="addBlackNumber"
+        android:gravity="center_vertical"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="添加"/>
+    
+    </RelativeLayout>
     
     <com.skylark.mobilesoft.ui.FocusedTextView 
         android:singleLine="true"
@@ -24,8 +36,8 @@
         />
     <ListView 
         android:id="@+id/lv_callsms_safe"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
         
     </ListView>
     

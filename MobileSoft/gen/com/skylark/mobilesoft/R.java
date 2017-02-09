@@ -61,71 +61,82 @@ containing a value of this type.
         public static final int btn_green_pressed=0x7f020004;
         public static final int button=0x7f020005;
         public static final int button_bg=0x7f020006;
-        public static final int call_locate_blue=0x7f020007;
-        public static final int call_locate_gray=0x7f020008;
-        public static final int call_locate_green=0x7f020009;
-        public static final int call_locate_orange=0x7f02000a;
-        public static final int call_locate_white=0x7f02000b;
-        public static final int callmsgsafe=0x7f02000c;
-        public static final int function_greenbutton_normal=0x7f02000d;
-        public static final int function_greenbutton_pressed=0x7f02000e;
-        public static final int gradient_box=0x7f02000f;
-        public static final int gradient_box_pressed=0x7f020010;
-        public static final int ic_launcher=0x7f020011;
-        public static final int jiantou1_pressed=0x7f020012;
-        public static final int lock=0x7f020013;
-        public static final int luncher_bg=0x7f020014;
-        public static final int netmanager=0x7f020015;
-        public static final int next=0x7f020016;
-        public static final int phone=0x7f020017;
-        public static final int previous=0x7f020018;
-        public static final int safe=0x7f020019;
-        public static final int settings=0x7f02001a;
-        public static final int setup1=0x7f02001b;
-        public static final int shape_selector=0x7f02001c;
-        public static final int sysoptimize=0x7f02001d;
-        public static final int taskmanager=0x7f02001e;
-        public static final int trojan=0x7f02001f;
-        public static final int unlock=0x7f020020;
+        public static final int button_select=0x7f020007;
+        public static final int call_locate_blue=0x7f020008;
+        public static final int call_locate_gray=0x7f020009;
+        public static final int call_locate_green=0x7f02000a;
+        public static final int call_locate_orange=0x7f02000b;
+        public static final int call_locate_white=0x7f02000c;
+        public static final int callmsgsafe=0x7f02000d;
+        public static final int delete_selector=0x7f02000e;
+        public static final int function_greenbutton_normal=0x7f02000f;
+        public static final int function_greenbutton_pressed=0x7f020010;
+        public static final int gradient_box=0x7f020011;
+        public static final int gradient_box_pressed=0x7f020012;
+        public static final int ic_delete_btn=0x7f020013;
+        public static final int ic_delete_btn_focused=0x7f020014;
+        public static final int ic_launcher=0x7f020015;
+        public static final int jiantou1_pressed=0x7f020016;
+        public static final int lock=0x7f020017;
+        public static final int luncher_bg=0x7f020018;
+        public static final int netmanager=0x7f020019;
+        public static final int next=0x7f02001a;
+        public static final int phone=0x7f02001b;
+        public static final int previous=0x7f02001c;
+        public static final int safe=0x7f02001d;
+        public static final int settings=0x7f02001e;
+        public static final int setup1=0x7f02001f;
+        public static final int shape_selector=0x7f020020;
+        public static final int sysoptimize=0x7f020021;
+        public static final int taskmanager=0x7f020022;
+        public static final int trojan=0x7f020023;
+        public static final int unlock=0x7f020024;
     }
     public static final class id {
-        public static final int action_settings=0x7f0b0024;
-        public static final int bt_dpm=0x7f0b000d;
-        public static final int cancel=0x7f0b001d;
-        public static final int cb_protecting=0x7f0b000e;
-        public static final int cb_status=0x7f0b0023;
-        public static final int city_five=0x7f0b0017;
-        public static final int city_four=0x7f0b0016;
-        public static final int city_one=0x7f0b0013;
-        public static final int city_three=0x7f0b0015;
-        public static final int city_two=0x7f0b0014;
+        public static final int action_settings=0x7f0b002b;
+        public static final int bt_dpm=0x7f0b000e;
+        public static final int cancel=0x7f0b0020;
+        public static final int cb_phone=0x7f0b001d;
+        public static final int cb_protecting=0x7f0b000f;
+        public static final int cb_sms=0x7f0b001e;
+        public static final int cb_status=0x7f0b002a;
+        public static final int city_five=0x7f0b0018;
+        public static final int city_four=0x7f0b0017;
+        public static final int city_one=0x7f0b0014;
+        public static final int city_three=0x7f0b0016;
+        public static final int city_two=0x7f0b0015;
         public static final int ed_phone=0x7f0b0005;
-        public static final int et_city=0x7f0b0012;
-        public static final int et_setup3_phone=0x7f0b000c;
-        public static final int et_setup_confirm=0x7f0b001e;
-        public static final int et_setup_pwd=0x7f0b001b;
-        public static final int iv_item=0x7f0b001f;
+        public static final int et_blacknumber=0x7f0b001c;
+        public static final int et_city=0x7f0b0013;
+        public static final int et_setup3_phone=0x7f0b000d;
+        public static final int et_setup_confirm=0x7f0b0022;
+        public static final int et_setup_pwd=0x7f0b0021;
+        public static final int iv_delete=0x7f0b0025;
+        public static final int iv_item=0x7f0b0026;
         public static final int iv_protecting=0x7f0b0004;
         public static final int list_home=0x7f0b0002;
         public static final int list_select_contact=0x7f0b0007;
         public static final int lv_callsms_safe=0x7f0b0001;
-        public static final int ok=0x7f0b001c;
+        public static final int ok=0x7f0b001f;
         public static final int result=0x7f0b0006;
-        public static final int rl_root_splash=0x7f0b000f;
+        public static final int rl_root_splash=0x7f0b0010;
         public static final int scv_changebg=0x7f0b000a;
-        public static final int siv_setup2_sim=0x7f0b000b;
+        public static final int siv_callsms_safe=0x7f0b000b;
+        public static final int siv_setup2_sim=0x7f0b000c;
         public static final int siv_show_address=0x7f0b0009;
         public static final int siv_update=0x7f0b0008;
         public static final int tv1=0x7f0b0000;
-        public static final int tv_address=0x7f0b0018;
-        public static final int tv_desc=0x7f0b0022;
-        public static final int tv_item=0x7f0b0020;
-        public static final int tv_name=0x7f0b0019;
-        public static final int tv_phone=0x7f0b001a;
+        public static final int tv_address=0x7f0b0019;
+        public static final int tv_black_mode=0x7f0b0024;
+        public static final int tv_black_number=0x7f0b0023;
+        public static final int tv_desc=0x7f0b0029;
+        public static final int tv_item=0x7f0b0027;
+        public static final int tv_name=0x7f0b001a;
+        public static final int tv_phone=0x7f0b001b;
         public static final int tv_savenumber=0x7f0b0003;
-        public static final int tv_splash_version=0x7f0b0010;
-        public static final int tv_title=0x7f0b0021;
-        public static final int tv_update_info=0x7f0b0011;
+        public static final int tv_splash_version=0x7f0b0011;
+        public static final int tv_title=0x7f0b0028;
+        public static final int tv_update_info=0x7f0b0012;
     }
     public static final class layout {
         public static final int activity_atools=0x7f030000;
@@ -144,11 +155,13 @@ containing a value of this type.
         public static final int activity_weather=0x7f03000d;
         public static final int address_show=0x7f03000e;
         public static final int contact_item_view=0x7f03000f;
-        public static final int dialog_enter_password=0x7f030010;
-        public static final int dialog_setup_password=0x7f030011;
-        public static final int list_item_home=0x7f030012;
-        public static final int setting_click_view=0x7f030013;
-        public static final int setting_item_view=0x7f030014;
+        public static final int dialog_add_blacknumber=0x7f030010;
+        public static final int dialog_enter_password=0x7f030011;
+        public static final int dialog_setup_password=0x7f030012;
+        public static final int list_item_callsms=0x7f030013;
+        public static final int list_item_home=0x7f030014;
+        public static final int setting_click_view=0x7f030015;
+        public static final int setting_item_view=0x7f030016;
     }
     public static final class menu {
         public static final int splash=0x7f0a0000;
@@ -240,7 +253,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:desc_off
+          @attr name com.skylark.mobilesoft:desc_off
         */
         public static final int TextView_desc_off = 2;
         /**
@@ -254,7 +267,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:desc_on
+          @attr name com.skylark.mobilesoft:desc_on
         */
         public static final int TextView_desc_on = 1;
         /**
@@ -268,7 +281,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:title
+          @attr name com.skylark.mobilesoft:title
         */
         public static final int TextView_title = 0;
     };

@@ -94,6 +94,26 @@ public class HomeActivity extends Activity {
 			}
 		});
 	}
+	
+	private long lastClickTime = 0;
+	@Override
+	public void onBackPressed() {
+		//自定义一个后退事件的操作
+		if(lastClickTime <= 0){
+			Toast.makeText(this, "再按一次退出应用", Toast.LENGTH_SHORT).show();
+			lastClickTime = System.currentTimeMillis();
+		}else{
+			long currentClickTime = System.currentTimeMillis();
+			if (currentClickTime-lastClickTime < 1000) {
+				finish();
+			}else{
+				Toast.makeText(this, "再按一次退出应用", Toast.LENGTH_SHORT).show();
+				lastClickTime = currentClickTime;
+			}
+		}
+		
+	
+	}
 
 	protected void showLostFindDialog() {
 		// 是否设置过密码
@@ -258,12 +278,19 @@ public class HomeActivity extends Activity {
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
 
-			View view = View.inflate(HomeActivity.this,
-					R.layout.list_item_home, null);
+			View view;
+			if (convertView == null) {
+				view = View.inflate(HomeActivity.this,
+						R.layout.list_item_home, null);
+			}else {
+				view = convertView;
+			}
 			ImageView iv_item = (ImageView) view.findViewById(R.id.iv_item);
 			TextView tv_item = (TextView) view.findViewById(R.id.tv_item);
+			
 			tv_item.setText(names[position]);
 			iv_item.setImageResource(ids[position]);
+			
 			return view;
 		}
 

@@ -29,6 +29,9 @@
     <instrumentation
         android:name="android.test.InstrumentationTestRunner"
         android:targetPackage="com.skylark.mobilesoft" />
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.READ_CALL_LOG"/>
+    <uses-permission android:name="android.permission.WRITE_CALL_LOG"/>
     
     <application
         android:allowBackup="true"
@@ -63,6 +66,7 @@
         
         <service android:name="com.skylark.mobilesoft.service.GPSService"/>
         <service android:name="com.skylark.mobilesoft.service.AddressService"/>
+        <service android:name="com.skylark.mobilesoft.service.CallSmsSafeService"/>
 
         <receiver android:name="com.skylark.mobilesoft.recevier.BootCompleteReceiver" >
             <intent-filter>

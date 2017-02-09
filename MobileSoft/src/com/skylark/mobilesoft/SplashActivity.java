@@ -14,7 +14,6 @@ import net.tsz.afinal.http.AjaxCallBack;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.R.integer;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
@@ -37,7 +36,7 @@ import android.view.animation.AlphaAnimation;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.skylark.mobilesoft.utils.StreamTools;
+import com.skylark.mobilesoft.utils.StreamTool;
 
 public class SplashActivity extends Activity {
 	
@@ -67,14 +66,12 @@ public class SplashActivity extends Activity {
 		
 		//拷贝数据库
 		copyDB();
-		
 		if (update) {
 			//检查升级
 			checkUpdate();
 		}else {
 			//自动升级已经关闭
 			handler.postDelayed(new Runnable() {
-				
 				@Override
 				public void run() {
 					//进入主页面
@@ -90,7 +87,6 @@ public class SplashActivity extends Activity {
 		aa.setDuration(500);
 		findViewById(R.id.rl_root_splash).setAnimation(aa);
 	}
-	
 	/**
 	 * 把address.db 拷贝到 data/data/<包名>/files/address.db
 	 */
@@ -104,7 +100,6 @@ public class SplashActivity extends Activity {
 				//正常,不需要拷贝了
 				Log.i(TAG, "数据库拷贝成功");
 			}else {
-				
 				//输入流
 				InputStream is = getAssets().open("address.db");
 				//文件输出流
@@ -122,16 +117,12 @@ public class SplashActivity extends Activity {
 				is.close();
 				fos.close();
 			}
-			
-			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-
 	private Handler handler = new Handler(){
-
 		@Override
 		public void handleMessage(Message msg) {
 			// TODO Auto-generated method stub
@@ -159,7 +150,6 @@ public class SplashActivity extends Activity {
 			default:
 				break;
 			}
-			
 		}
 		
 	};
@@ -178,6 +168,7 @@ public class SplashActivity extends Activity {
 				try {
 					
 					//URL
+					//这里的serverurl是在  values  config.xml中配置的
 					URL url = new URL(getString(R.string.serverurl));
 					//联网，打开一个输入流
 					HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -191,7 +182,7 @@ public class SplashActivity extends Activity {
 						//联网成功
 						InputStream is = conn.getInputStream();
 						//把流转换成string
-						String result = StreamTools.readFromStream(is);
+						String result = StreamTool.decodeStream(is);
 						Log.i(TAG, "联网成功了" + result);
 						//json解析
 						JSONObject obj = new JSONObject(result);

@@ -27,7 +27,12 @@ import android.view.View.OnTouchListener;
 import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
-
+/**
+* @ClassName: AddressService 
+* @Description(描叙): 归属地查询的服务，里面还实现了来电归属地位置的显示框
+* @author Skylark 
+* @date 2017年2月5日 下午8:01:36
+ */
 public class AddressService extends Service {
 
 	protected static final String TAG = "AddressService";
@@ -134,6 +139,15 @@ public class AddressService extends Service {
 	
 	long[] mHits = new long[2];//双击事件
 
+	/**
+	* @MethodName: myToast 
+	* @Description(描叙): 
+	* @author Skylark 
+	* @param @param address 
+	* @return void
+	* @throws
+	* @date 2017年2月5日 下午8:04:57
+	 */
 	public void myToast(String address) {
 
 		// View = new TextView(getApplicationContext());
@@ -232,7 +246,7 @@ public class AddressService extends Service {
 					break;
 				}
 
-//				return true; // 事件处理完毕了,不要让父控件 父布局相应触摸事件了.
+//				return true; // 事件处理完毕了,不要让父控件 父布局响应触摸事件了.
 				return false;
 			}
 		});

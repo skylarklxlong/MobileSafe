@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 import com.skylark.mobilesoft.service.AddressService;
+import com.skylark.mobilesoft.service.CallSmsSafeService;
 import com.skylark.mobilesoft.ui.SettingClickView;
 import com.skylark.mobilesoft.ui.SettingItemView;
 import com.skylark.mobilesoft.utils.ServiceUtils;
@@ -26,6 +27,9 @@ public class SettingActivity extends Activity {
 	// 设置是否开启显示号码归属地
 	private SettingItemView siv_show_address;
 	private Intent showAddress;
+	//设置是否开启黑名单拦截
+	private SettingItemView siv_callsms_safe;
+	private Intent callSmsSafeIntent;
 	
 	//设置号码归属地显示框背景
 	private SettingClickView scv_changebg;
@@ -35,17 +39,25 @@ public class SettingActivity extends Activity {
 		// TODO Auto-generated method stub
 		super.onResume();
 		//服务状态的监听
-		showAddress = new Intent(this, AddressService.class);
+		showAddress = new Intent(this, AddressService.class); //感觉这段代码放在这里是没有用的
 		boolean isServiceRunning = ServiceUtils.isServiceRunning(
 				SettingActivity.this,
 				"com.skylark.mobilesoft.service.AddressService");
+		//简化代码
+		siv_show_address.setChecked(isServiceRunning);
 		
-		if (isServiceRunning) {
-			//监听来电的服务是开启的
-			siv_show_address.setChecked(true);
-		}else {
-			siv_show_address.setChecked(false);
-		}
+//		if (isServiceRunning) {
+//			//监听来电的服务是开启的
+//			siv_show_address.setChecked(true);
+//		}else {
+//			siv_show_address.setChecked(false);
+//		}
+		
+		boolean isCallSmsServiceRunning = ServiceUtils.isServiceRunning(
+				SettingActivity.this,
+				"com.skylark.mobilesoft.service.CallSmsSafeService");
+		siv_callsms_safe.setChecked(isCallSmsServiceRunning);
+		
 		
 	}
 
@@ -113,6 +125,27 @@ public class SettingActivity extends Activity {
 					// 没有打开显示号码归属地
 					siv_show_address.setChecked(true);
 					startService(showAddress);
+				}
+			}
+		});
+		
+		//黑名单拦截的设置
+		siv_callsms_safe = (SettingItemView) findViewById(R.id.siv_callsms_safe);
+		callSmsSafeIntent = new Intent(this, CallSmsSafeService.class);
+		
+		siv_callsms_safe.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// 判断是否有选中
+				// 已经打开了
+				if (siv_callsms_safe.isChecked()) {
+					siv_callsms_safe.setChecked(false);
+					stopService(callSmsSafeIntent);
+				} else {
+					// 没有打开
+					siv_callsms_safe.setChecked(true);
+					startService(callSmsSafeIntent);
 				}
 			}
 		});

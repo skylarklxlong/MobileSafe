@@ -51,6 +51,17 @@
         android:layout_height="wrap_content">
         
     </com.skylark.mobilesoft.ui.SettingClickView>
+    
+    <com.skylark.mobilesoft.ui.SettingItemView 
+        skylark:title="设置是否开启黑名单拦截"
+        skylark:desc_on="黑名单拦截已开启"
+        skylark:desc_off="黑名单拦截已关闭"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/siv_callsms_safe"
+        >
+        
+    </com.skylark.mobilesoft.ui.SettingItemView>
 
     
 </LinearLayout>
